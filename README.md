@@ -1,23 +1,23 @@
 # SIMULATION-OF-AUTOCORRELATION-AND-PSD-USING-SCILAB-1
 
-__AIM:__
+# __AIM:__
 
 Write a program for Autocorrelation and PSD of signals in SCILAB and verify Wiener-Khinchin relation. 
 
 
-__EQUIPMENTS Needed:__
+# __EQUIPMENTS Needed:__
 
 .Computer with i3 Processor 
 
 .SCI LAB
 
 
-__THEORY:__
+# __THEORY:__
 
 The Wiener-Khinchin theorem states that the power spectral density of a wide sense stationary random process is the 
 Fourier transform of the corresponding autocorrelation function.
 
-__Algorithm:__
+# __Algorithm:__
 
  1.Load or Define the Signal: Input your time-domain signal. 
 
@@ -28,7 +28,7 @@ Welch’s periodogram or by using the Fourier transform of the autocorrelation.
 
 4.Plot Results: Visualize the autocorrelation function and PSD. 
 
-__PROCEDURE:__
+# __PROCEDURE:__
 
 
 Refer Algorithms and write code for the experiment. 
@@ -45,8 +45,31 @@ If any Error, correct it in code and execute again
 
 Verify the generated waveform using Tabulation and Model Waveform 
 
-__PROGRAM:__
+# __PROGRAM:__
+```
+clc 
+clear all; 
+t=0:0.01:2*pi; 
+x=sin(2*t); 
+subplot(3,2,1); 
+plot(x); 
+au=xcorr(x,x); 
+Subplot (3,2,2); 
+plot (au); 
+v=fft(au); 
+subplot(3,2,3); 
+plot(abs(v)); 
+fw=fft(x); 
+subplot(3,2,4); 
+plot(fw); 
+fw2=(abs(fw)).^2; 
+subplot(3,2,5); 
+plot(fw2);
+```
 
-__OUTPUT:__
+# __OUTPUT:__
+<img width="1861" height="867" alt="Screenshot 2025-11-13 081504" src="https://github.com/user-attachments/assets/0599b83a-71a8-4d0d-8b11-511e723de0ef" />
 
-__RESULT:__
+
+# __RESULT:__
+Thus, the Autocorrelation and PSD are executed in Scilab and output is verified.
